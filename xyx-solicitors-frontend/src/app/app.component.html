@@ -17,16 +17,16 @@
       <mat-nav-list *ngIf="user">
         <a mat-list-item>
           <span class="entry">
-             <mat-icon routerLink="/clients-management">supervised_user_circle</mat-icon>
-            <span *ngIf="!isCollapsed"><a class="nav-item nav-link" routerLink="/clients-management" routerLinkActive="active">Clients</a></span>
+             <mat-icon routerLink="/clients">supervised_user_circle</mat-icon>
+            <span *ngIf="!isCollapsed"><a class="nav-item nav-link" routerLink="/clients" routerLinkActive="active">Clients</a></span>
           </span>
         </a>
       </mat-nav-list>
       <mat-nav-list *ngIf="user">
         <a mat-list-item>
           <span class="entry">
-             <mat-icon routerLink="/users">assignment</mat-icon>
-            <span *ngIf="!isCollapsed"><a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Cases</a></span>
+             <mat-icon routerLink="/cases">assignment</mat-icon>
+            <span *ngIf="!isCollapsed"><a class="nav-item nav-link" routerLink="/cases" routerLinkActive="active">Cases</a></span>
           </span>
         </a>
       </mat-nav-list>
