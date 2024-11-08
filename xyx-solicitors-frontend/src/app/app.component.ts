@@ -12,7 +12,7 @@ import { User } from './_models';
 import { AlertComponent } from './_components/alert.component';
 
 @Component({
-    selector: 'app-root', templateUrl: 'app.component.html',
+    selector: 'app-root', templateUrl: 'app.component.html', styleUrls: ['app.component.scss'],
     standalone: true,
     imports: [NgIf, RouterOutlet, RouterLink, RouterLinkActive, AlertComponent, MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule]
 })
