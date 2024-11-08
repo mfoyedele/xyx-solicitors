@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from './home.component';","map":{"version":3,"names":[],"sources":["/home/devkhalifa/Documents/GitHub/xyx-solicitors-frontend/src/app/home/index.ts"],"sourcesContent":["export * from './home.component';"],"mappings":"AAAA,cAAc,kBAAkB"},"metadata":{},"sourceType":"module","externalDependencies":[]}
