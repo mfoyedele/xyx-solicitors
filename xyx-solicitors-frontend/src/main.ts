@@ -8,18 +8,18 @@ import { fakeBackendInterceptor } from '@app/_helpers';
 import { AppComponent } from '@app/app.component';
 import { jwtInterceptor, errorInterceptor } from '@app/_helpers';
 import { APP_ROUTES } from '@app/app.routes';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 bootstrapApplication(AppComponent, {
     providers: [
-        provideRouter(APP_ROUTES),
-        provideHttpClient(
-            withInterceptors([
-                jwtInterceptor, 
-                errorInterceptor,
-
-                // fake backend
-                fakeBackendInterceptor
-            ])
-        )
-    ]
+    provideRouter(APP_ROUTES),
+    provideHttpClient(withInterceptors([
+        jwtInterceptor,
+        errorInterceptor,
+        // fake backend
+        fakeBackendInterceptor
+    ])),
+    provideAnimations(),
+    provideAnimations()
+]
 });
