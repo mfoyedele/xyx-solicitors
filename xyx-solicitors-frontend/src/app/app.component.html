@@ -1,14 +1,41 @@
-<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
-        <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
-    </div>
-</nav>
 
-<!-- main app container -->
-<div class="container">
-    <alert></alert>
-    <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="primary" *ngIf="user">
+    <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>XYX SOLICITORS</h1>
+  </mat-toolbar>
+  <mat-sidenav-container autosize="true" >
+    <mat-sidenav [ngClass]="!isCollapsed ? 'expanded' : ''" [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
+      <mat-nav-list *ngIf="user">
+        <a mat-list-item>
+          <span class="entry">
+            <mat-icon>house</mat-icon>
+            <span *ngIf="!isCollapsed"><a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a></span>
+          </span>
+        </a>
+      </mat-nav-list>
+      <mat-nav-list *ngIf="user">
+        <a mat-list-item>
+          <span class="entry">
+            <mat-icon>supervised_user_circle</mat-icon>
+            <span *ngIf="!isCollapsed"><a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users Management</a></span>
+          </span>
+        </a>
+      </mat-nav-list>
+      <mat-nav-list *ngIf="user">
+        <a mat-list-item>
+          <span class="entry">
+            <mat-icon>input</mat-icon>
+            <span *ngIf="!isCollapsed"><button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button></span>
+          </span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+     
+      <router-outlet></router-outlet>
+      <alert></alert>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+ 
